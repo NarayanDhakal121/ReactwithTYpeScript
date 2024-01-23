@@ -1,20 +1,18 @@
-import React from 'react'
-import { IconButton, Flex, Stack, Text, Box } from '@chakra-ui/react'
+import React from 'react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 
 const Footer = () => {
   return (
-    <>
-      <Box bg="#738CE2AD" color="white" p={4}>
-        <Flex justifyContent="space-between" alignItems="center">
-          <Stack spacing={4} direction="column" align="start">
-            <Text fontSize="lg" fontWeight="bold">About us:</Text>
-            <Text fontSize="md" fontWeight="bold">Email: myemail@gmail.com</Text>
-            <Text fontSize="md" fontWeight="bold">Mobile: +91 98xxxxxx10</Text>
-          </Stack>
-        </Flex>
-      </Box>
-    </>
-  )
-}
+    <Box bg="#738CE2AD" padding="35px">
+      <Text fontWeight="bold" fontSize="30px">
+        About us:
+      </Text>
+      <Flex flexDirection="column" gap="5" margin="20px">
+        <Text fontWeight="bold">Email: ReactIntern@testDesign.org</Text>
+        <Text fontWeight="bold">Contact: +977-9812345678</Text>
+      </Flex>
+    </Box>
+  );
+};
 
 export default Footer;

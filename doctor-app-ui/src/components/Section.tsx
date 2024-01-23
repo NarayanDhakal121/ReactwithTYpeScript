@@ -1,50 +1,59 @@
-import { List, ListItem, Icon,Flex, Box, Text, Image, Input, VStack } from "@chakra-ui/react";
-import { FaSearch , FaMapMarkerAlt } from 'react-icons/fa';
-import './Section.css'
 
-const MainSection: React.FC = () => {
+import React from "react";
+import { Box, Flex, Text, Image, Input, InputGroup, InputRightElement, List, ListItem } from "@chakra-ui/react";
+import { AiOutlineSearch } from "react-icons/ai";
+import { BsDot } from "react-icons/bs";
+
+const Section = () => {
   return (
-    <VStack spacing={6} align="start" mt='100px'> 
-      <Text fontSize="2xl" fontWeight="bold">
-      <span> Find the right </span> <span> Doctor Right at your</span>  <span>fingertips</span>
-      </Text>
-          <Flex  align="center"  mr='auto' ml='12' gap='1'>
-          <Icon as={FaSearch} boxSize={9}  p={2} color='#5430A8' size='10' />
-           <Flex align="center" mr='auto' ml='10'>
-              <Box  bg='#CFD5E1' p='5' borderRadius='20'  alignItems='center' w='400px'>
-              <Flex align="center" gap='5'>
-              <Input placeholder="Search Nearest hospital" borderRadius='full' _placeholder={{ color: '#000000', fontWeight:'semi-bold' }}/>
-              <Icon as={FaSearch} boxSize={6} color='#D0C4C4'/>
-             </Flex>
-          </Box>
-       </Flex>
-      <Flex>
-      </Flex>
-          </Flex>
-          <Text color='#00000069' fontSize='13' lineHeight='1.2'>
-  <List spacing={3}>
-    <ListItem as='span'>
-      <Box as="span" css={{ '::before': { content: '" ."' } }}>
-        We are here to hear and heal your health <ListItem>problems</ListItem>
+    <Flex justify="space-between" align="center" p="5rem" mt='10' mb='10'>
+      <Box width="50%">
+        <Text fontSize="2rem" fontWeight="bold">
+          Find the right
+        </Text>
+        <Text fontSize="2rem" fontWeight="bold">
+          Doctor Right at your
+        </Text>
+        <Text fontSize="2rem" fontWeight="bold">
+          fingertips
+        </Text>
+        <Flex align="center" gap="5px" width="sm" margin="25px 0">
+          <AiOutlineSearch color="purple" size="25px" />
+          <InputGroup size="md">
+            <Input borderRadius="10px" placeholder="Search Nearest hospital" />
+            <InputRightElement>
+              <AiOutlineSearch size="20px" color="purple" />
+            </InputRightElement>
+          </InputGroup>
+        </Flex>
+        <List color='#00000069' fontSize='20' lineHeight='2'>
+          <ListItem display="flex" alignItems="center" gap="5px">
+            <BsDot />
+            <Text>We are here to help and heal your health problems.</Text>
+          </ListItem>
+          <ListItem display="flex" alignItems="center" gap="5px">
+            <BsDot />
+            <Text>It is not only about the money.</Text>
+          </ListItem>
+          <ListItem display="flex" alignItems="center" gap="5px">
+            <BsDot />
+            <Text>More than just treating patients.</Text>
+          </ListItem>
+        </List>
       </Box>
-    </ListItem>
-    <ListItem as='span'>
-      <Box as="span" css={{ '::before': { content: '" . "' } }}>
-        It is not only about the money
+
+      <Box width="50%">
+        <Box width="50%" position="relative">
+          <Image src="Images/main1.png" alt="pic" width="100%" position="absolute" top="-168px" left="230px" zIndex="1" />
+          <Image src="Images/main2.png" alt="pic" width="90%" position="absolute" top="-146px" left="230px" zIndex="2" />
+          <Image src="Images/main3.png" alt="pic" width="55%" position="absolute" top="-86px" left="283px" zIndex="2" />
+          <Text fontSize="1rem" fontWeight="bold" position="absolute" bottom="-170px" right="-95%" transform="translateX(-50%)" display={'flex'}>
+          Top rated primary care physician
+          </Text>
+        </Box>
       </Box>
-    </ListItem>
-    <ListItem as='span'>
-      <Box as="span" css={{ '::before': { content: '" ."' } }}>
-        More than just treating patients
-      </Box>
-    </ListItem>
-  </List>
-</Text>
-       <Flex justifyContent={'flex'}>
-        <Text>Top rated primary care physicians</Text>
-       </Flex>
-    </VStack>
+    </Flex>
   );
 };
 
-export default MainSection;
+export default Section;
